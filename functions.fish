@@ -1,3 +1,3 @@
-function -d "current branch" B
+function current_branch
   git branch --no-color | grep "*" | sed "s/* //"
 end
