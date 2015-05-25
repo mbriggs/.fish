@@ -8,15 +8,15 @@ function pure_human_time
   set -l minutes (math "$argv / 60 % 60")
   set -l seconds (math "$argv % 60")
 
-  if test $days -gt 0
+  if [ $days -gt 0 ]
     echo -n -s $days'd '
   end
 
-  if test $hours -gt 0
+  if [ $hours -gt 0 ]
     echo -n -s $hours'h '
   end
 
-  if test $minutes -gt 0
+  if [ $minutes -gt 0 ]
     echo -n -s $minutes'm '
   end
 
@@ -35,7 +35,7 @@ end
 function pure_last_exec_time
   set -l seconds (math "$CMD_DURATION / 1000")
 
-  if test $seconds -ge 1
+  if [ $seconds -ge 1 ]
     echo -n -s ' '
     pure_human_time $seconds
   end
@@ -48,15 +48,15 @@ function pure_git_arrows
 
   set -l arrows ''
 
-  if test (command git rev-list --right-only --count HEAD...@'{u}' ^/dev/null) -gt 0
+  if [ (command git rev-list --right-only --count HEAD...@'{u}' ^/dev/null) -gt 0 ]
     set arrows $arrows'⇣'
   end
 
-  if test (command git rev-list --left-only --count HEAD...@'{u}' ^/dev/null) -gt 0
+  if [ (command git rev-list --left-only --count HEAD...@'{u}' ^/dev/null) -gt 0 ]
     set arrows $arrows'⇡'
   end
 
-  if test $arrows
+  if [ -n "$arrows" ]
     echo -n -s $arrows
   end
 end
