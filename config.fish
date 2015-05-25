@@ -42,11 +42,11 @@ else
     set -gx EDITOR "`which vi`"
 end
 
-if test -x "`which lv`"
-    set -gx PAGER "`which lv`"
+if test -x "(which lv)"
+    set -gx PAGER "(which lv)"
     set -gx LV "-c"
-else if test -x "`which less`"
-    set -gx PAGER "`which less`"
+else if test -x "(which less)"
+    set -gx PAGER "(which less)"
     set -gx LESS "-isR"
     alias lv="less"
 else

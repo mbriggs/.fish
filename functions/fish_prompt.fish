@@ -36,7 +36,7 @@ function pure_last_exec_time
   set -l seconds (math "$CMD_DURATION / 1000")
 
   if [ $seconds -ge 1 ]
-    echo -n -s ' '
+    echo -n -s '  '
     pure_human_time $seconds
   end
 end
@@ -112,7 +112,7 @@ function fish_prompt
     pure_git_arrows
   end
 
-  set_color yellow
+  set_color purple
   pure_last_exec_time
 
   set_color purple
