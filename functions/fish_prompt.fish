@@ -1,4 +1,6 @@
-set default_pure_prompt_username 'matt'
+# PUREFISH prompt
+# mostly stolen by the awesome zsh prompt "pure" by @sindresaurus
+
 
 function pure_human_time
   set -l days (math "$argv / 60 / 60 / 24")
