@@ -1,5 +1,5 @@
 # PUREFISH prompt
-# mostly stolen by the awesome zsh prompt "pure" by @sindresaurus
+# mostly stolen from the awesome zsh prompt "pure" by @sindresaurus
 
 
 function pure_human_time
