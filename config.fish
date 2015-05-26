@@ -35,18 +35,18 @@ set -gx PURE_DEFAULT_USER 'matt'
 
 set -gx RUBY_GC_MALLOC_LIMIT 80000000
 
-if test -x "`which vim`"
+if command -v vim >/dev/null ^&1
     set -gx EDITOR "`which vim`"
     alias vi="`which vim`"
 else
     set -gx EDITOR "`which vi`"
 end
 
-if test -x "(which lv)"
-    set -gx PAGER "(which lv)"
+if command -v lv >/dev/null ^&1
+    set -gx PAGER (which lv)
     set -gx LV "-c"
-else if test -x "(which less)"
-    set -gx PAGER "(which less)"
+else if command -v less >/dev/null ^&1
+    set -gx PAGER (which less)
     set -gx LESS "-isR"
     alias lv="less"
 else
