@@ -4,7 +4,6 @@ else
   set -gx RBENV_ROOT $HOME/.rbenv
 end
 
-
 set -gx fish_user_paths "./bin" \
       "$RBENV_ROOT/bin" \
       "$RBENV_ROOT/plugins/ruby-build/bin" \
@@ -52,7 +51,6 @@ else if command -v less >/dev/null ^&1
 else
     set -gx PAGER "/bin/more"
 end
-
 
 ### Plugins
 

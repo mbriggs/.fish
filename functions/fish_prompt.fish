@@ -33,6 +33,10 @@ function pure_current_branch
 end
 
 function pure_last_exec_time
+  if [ -z "$CMD_DURATION" ]
+    return
+  end
+
   set -l seconds (math "$CMD_DURATION / 1000")
 
   if [ $seconds -ge 1 ]
