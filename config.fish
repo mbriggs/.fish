@@ -69,7 +69,8 @@ if test -d $RBENV_ROOT
 end
 
 if test -d $NVM_DIR
-  source ./nvm.fish
+  source ~/.config/fish/nvm.fish
+  nvm use default 2>&1 >/dev/null
 end
 
 if test -f "/etc/profile.d/nuvango.sh"
